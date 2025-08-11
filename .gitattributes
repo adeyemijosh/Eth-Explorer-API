@@ -1,0 +1,2 @@
+# Force Github to classify ALL .go files as Go (even in subdirectories)
+*.go linguist-language=Go
