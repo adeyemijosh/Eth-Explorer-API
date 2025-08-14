@@ -2,16 +2,16 @@
 
 A high-performance REST API built with Go and Gin framework for exploring Ethereum blockchain data. This API provides endpoints to fetch transaction details, block information, wallet balances, and current network statistics.
 
-## 🚀 Features
+## Features
 
 - **Block Information**: Fetch detailed block data by number.
 - **Transaction Details**: Get comprehensive transaction information by hash.
 - **Wallet Balances**: Check ETH balance for any address.
 - **Latest Block**: Get the most recent block data.
-- **Gas Price**: Get the current network gas price.
+- **Gas Price**: Get the current network gas price
 - **Health Check**: Endpoint to check the status of the API.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 eth-explorer-api/
@@ -31,7 +31,7 @@ eth-explorer-api/
 └── README.md           # This file
 ```
 
-## 🛠 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 
@@ -73,7 +73,7 @@ go run cmd/main.go
 
 The server will start on `http://localhost:8080`.
 
-## 📚 API Endpoints
+## API Endpoints
 
 The base URL for all endpoints is `http://localhost:8080/api/v1`.
 
