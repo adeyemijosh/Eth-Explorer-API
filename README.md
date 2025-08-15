@@ -35,14 +35,6 @@ eth-explorer-api/
 
 ###
 ```
-
-## Setup Instructions
->>>>>>> e926519aa68135b7a8663a6ee99950a95f6935fb
-## Setup Instructions
-=======
-## Setup Instructions
->>>>>>> e926519aa68135b7a8663a6ee99950a95f6935fb
-
 ### Prerequisites
 
 - Go 1.21 or higher
