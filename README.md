@@ -34,3 +34,123 @@ eth-explorer-api/
 ## Setup Instructions
 
 ###
+```
+
+## Setup Instructions
+>>>>>>> e926519aa68135b7a8663a6ee99950a95f6935fb
+## Setup Instructions
+=======
+## Setup Instructions
+>>>>>>> e926519aa68135b7a8663a6ee99950a95f6935fb
+
+### Prerequisites
+
+- Go 1.21 or higher
+- An Ethereum node URL (e.g., from Infura, Alchemy, or a local node)
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd eth-explorer-api
+```
+
+### 2. Install Dependencies
+
+```bash
+go mod tidy
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the root directory with the following content:
+
+```
+# Server configuration
+PORT=8080
+
+# Ethereum Node URL
+ETH_NODE_URL=https://mainnet.infura.io/v3/YOUR_PROJECT_ID
+```
+
+Replace `YOUR_PROJECT_ID` with your actual Ethereum node project ID.
+
+### 4. Run the Application
+
+```bash
+go run cmd/main.go
+```
+
+The server will start on `http://localhost:8080`.
+
+## API Endpoints
+
+The base URL for all endpoints is `http://localhost:8080/api/v1`.
+
+### Get Block Information
+
+`GET /eth/block/:number`
+
+- **`:number`**: The block number (e.g., `18500000`) or `"latest"`.
+
+### Get Transaction Details
+
+`GET /eth/transaction/:hash`
+
+- **`:hash`**: The transaction hash.
+
+### Get Wallet Balance
+
+`GET /eth/balance/:address`
+
+- **`:address`**: The Ethereum wallet address.
+
+### Get Transaction History
+
+`GET /eth/history/:address`
+
+- **`:address`**: The Ethereum wallet address.
+
+### Get Token Balance
+
+`GET /eth/token-balance/:address/:tokenAddress`
+
+- **`:address`**: The Ethereum wallet address.
+- **`:tokenAddress`**: The ERC-20 token contract address.
+
+### Get Token Transfers
+
+`GET /eth/token-transfers/:address`
+
+- **`:address`**: The Ethereum wallet address.
+
+### Get Contract ABI
+
+`GET /eth/contract-abi/:address`
+
+- **`:address`**: The smart contract address.
+
+### Get Contract Source
+
+`GET /eth/contract-source/:address`
+
+- **`:address`**: The smart contract address.
+
+### Get Event Logs
+
+`GET /eth/event-logs/:address`
+
+- **`:address`**: The smart contract address.
+- **`topics`** (query param): A comma-separated list of event topics to filter by.
+
+### Get Latest Block
+
+`GET /eth/latest-block`
+
+### Get Current Gas Price
+
+`GET /eth/gas-price`
+
+### Health Check
+
+`GET /health`
