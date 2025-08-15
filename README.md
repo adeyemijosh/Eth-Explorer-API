@@ -2,7 +2,7 @@
 
 A high-performance REST API built with Go and Gin framework for exploring Ethereum blockchain data. This API provides endpoints to fetch transaction details, block information, wallet balances, and current network statistics.
 
-## 🚀 Features
+##  Features
 
 - **Block Information**: Fetch detailed block data by number.
 - **Transaction Details**: Get comprehensive transaction information by hash.
@@ -11,7 +11,7 @@ A high-performance REST API built with Go and Gin framework for exploring Ethere
 - **Gas Price**: Get the current network gas price.
 - **Health Check**: Endpoint to check the status of the API.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 eth-explorer-api/
@@ -31,7 +31,7 @@ eth-explorer-api/
 └── README.md           # This file
 ```
 
-## 🛠 Setup Instructions
+##  Setup Instructions
 
 ### Prerequisites
 
@@ -94,6 +94,44 @@ The base URL for all endpoints is `http://localhost:8080/api/v1`.
 `GET /eth/balance/:address`
 
 - **`:address`**: The Ethereum wallet address.
+
+### Get Transaction History
+
+`GET /eth/history/:address`
+
+- **`:address`**: The Ethereum wallet address.
+
+### Get Token Balance
+
+`GET /eth/token-balance/:address/:tokenAddress`
+
+- **`:address`**: The Ethereum wallet address.
+- **`:tokenAddress`**: The ERC-20 token contract address.
+
+### Get Token Transfers
+
+`GET /eth/token-transfers/:address`
+
+- **`:address`**: The Ethereum wallet address.
+
+### Get Contract ABI
+
+`GET /eth/contract-abi/:address`
+
+- **`:address`**: The smart contract address.
+
+### Get Contract Source
+
+`GET /eth/contract-source/:address`
+
+- **`:address`**: The smart contract address.
+
+### Get Event Logs
+
+`GET /eth/event-logs/:address`
+
+- **`:address`**: The smart contract address.
+- **`topics`** (query param): A comma-separated list of event topics to filter by.
 
 ### Get Latest Block
 

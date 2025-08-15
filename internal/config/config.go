@@ -8,8 +8,9 @@ import (
 )
 
 type Config struct {
-	Port       string
-	EthNodeURL string
+	Port            string
+	EthNodeURL      string
+	EtherscanAPIKey string
 }
 
 func Load() *Config {
@@ -20,8 +21,9 @@ func Load() *Config {
 	}
 
 	return &Config{
-		Port:       getEnv("PORT", "8080"),
-		EthNodeURL: getEnv("ETH_NODE_URL", ""),
+		Port:            getEnv("PORT", "8080"),
+		EthNodeURL:      getEnv("ETH_NODE_URL", ""),
+		EtherscanAPIKey: getEnv("ETHERSCAN_API_KEY", ""),
 	}
 }
 

@@ -20,7 +20,7 @@ func main() {
 	fmt.Printf("Config loaded - Port: %s, ETH_NODE_URL: %s\n", cfg.Port, cfg.EthNodeURL)
 
 	fmt.Println("Initializing Ethereum service...")
-	ethService, err := services.NewEthService(cfg.EthNodeURL)
+	ethService, err := services.NewEthService(cfg.EthNodeURL, cfg.EtherscanAPIKey)
 	if err != nil {
 		fmt.Printf("ERROR: Failed to initialize Ethereum service: %v\n", err)
 		log.Fatal("Failed to initialize Ethereum service:", err)
@@ -53,6 +53,12 @@ func main() {
 		api.GET("/eth/balance/:address", ethHandler.GetBalance)
 		api.GET("/eth/latest-block", ethHandler.GetLatestBlock)
 		api.GET("/eth/gas-price", ethHandler.GetGasPrice)
+		api.GET("/eth/history/:address", ethHandler.GetTransactionHistory)
+		api.GET("/eth/token-balance/:address/:tokenAddress", ethHandler.GetTokenBalance)
+		api.GET("/eth/token-transfers/:address", ethHandler.GetTokenTransfers)
+		api.GET("/eth/contract-abi/:address", ethHandler.GetContractABI)
+		api.GET("/eth/contract-source/:address", ethHandler.GetContractSource)
+		api.GET("/eth/event-logs/:address", ethHandler.GetEventLogs)
 
 		// Health check
 		api.GET("/health", func(c *gin.Context) {
